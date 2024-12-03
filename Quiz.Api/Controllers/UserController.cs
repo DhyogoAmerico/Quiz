@@ -7,7 +7,7 @@ using Quiz.Domain.Repository;
 namespace Quiz.Api.Controllers
 {
     [ApiController]
-    [Route("/api/[controller]/[action]")]
+    [Route("/api/[controller]")]
     public class UserController
     {
         private readonly IUserRepository _userRepository;

@@ -1,12 +1,7 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+namespace Quiz.Domain.DTO;
 
-namespace Quiz.Domain.DTO
+public class Configuration
 {
-    public class Configuration
-    {
-        public string ConnectionString { get; set; } = string.Empty;
-    }
+    public static string PrivateKey = "";
+    public string ConnectionString { get; set; } = string.Empty;
 }

@@ -3,6 +3,7 @@ using Quiz.Domain.Entity;
 using Quiz.Domain.Repository;
 using Quiz.Infra.Context;
 using Dapper;
+using Quiz.Domain.ValueType;
 
 namespace Quiz.Infra.Repository;
 
@@ -13,7 +14,7 @@ public class UserRepository : IUserRepository
     {
         _context = context;
     }
-    public async Task<User> Login(string email, string password)
+    public async Task<User?> Login(string email, string password)
     {
         try
         {
@@ -27,7 +28,8 @@ public class UserRepository : IUserRepository
                                     AND use.password = @password";
 
             var parms = new {
-                email, password
+                email,
+                password = ((Password)password).ToMD5()
             };
 
             return await _context._connection.QueryFirstOrDefaultAsync<User>(sql, parms);
