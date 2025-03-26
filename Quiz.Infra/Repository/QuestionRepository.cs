@@ -21,12 +21,12 @@ public class QuestionRepository : IQuestionRepository
         try
         {
             string sql = @"UPDATE
-                                    tb_questions
-                                SET
-                                    status = @status
-                                WHERE
-                                    id = @id,
-                                    AND status = @beforeStatus";
+                                tb_questions
+                            SET
+                                status = @status
+                            WHERE
+                                id = @id,
+                                AND status = @beforeStatus";
 
             var parms = new 
             {
@@ -52,12 +52,12 @@ public class QuestionRepository : IQuestionRepository
         try
         {
             string sql = @"SELECT
-                                    question
-                                FROM
-                                    tb_questions
-                                WHERE
-                                    id = @id,
-                                    AND status = @beforeStatus";
+                                question
+                            FROM
+                                tb_questions
+                            WHERE
+                                id = @id,
+                                AND status = @beforeStatus";
 
             var parms = new 
             {

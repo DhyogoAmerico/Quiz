@@ -1,13 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Quiz.Domain.Entity;
+namespace Quiz.Domain.DTO;
 
-namespace Quiz.Domain.DTO
+public class QuizDTO: Entity.Quiz
 {
-    public class QuizDTO: Entity.Quiz
-    {
-        public List<QuestionDTO>? ListQuestions { get; set; }
-    }
+    public string Type { get; set; }
+    public string Level { get; set; }
+    public List<QuestionDTO>? ListQuestions { get; set; }
 }
